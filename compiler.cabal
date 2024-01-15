@@ -15,7 +15,8 @@ library
                         mtl >= 2.2 && < 2.3
     default-language:   GHC2021
     default-extensions: NoImplicitPrelude
-    exposed-modules:    Ourlude
+    exposed-modules:    Ourlude,
+                        Lexer
     ghc-options:        -Wall
     hs-source-dirs:     src
 
