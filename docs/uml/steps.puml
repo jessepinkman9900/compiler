@@ -1,0 +1,15 @@
+@startuml
+legend right
+PlantUML - %version()
+Date - %date()
+end legend
+
+skinparam maxMessageSize 120
+
+Lexing -> Parsing: raw string to tokens
+Parsing -> Simplifying: build syntax tree from tokens
+Simplifying -> "Type Checking": desugar & give slimmed down version of syntax tree
+"Type Checking" -> "Intermediate Representation": type check + type inference + add custom data types into table of properties
+"Intermediate Representation" -> "Code Generation": slim down AST into STG (STG so simple that it directly maps to C)
+"Code Generation" -> "Compiled Code": convert STG into C snippets
+@enduml

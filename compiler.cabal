@@ -1,0 +1,28 @@
+cabal-version:      3.0
+
+name:               compiler
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             jessepinkman9900
+build-type:         Simple
+
+
+
+library
+    build-depends: base >= 4.13 && < 5,
+                    containers >= 0.6 && < 0.7,
+                    mtl >= 2.2 && < 2.3
+    default-language: GHC2021
+    exposed-modules: Example
+    ghc-options: -Wall
+    hs-source-dirs:   src
+
+executable compiler
+    main-is:          Main.hs
+    build-depends: base >= 4.13 && < 5,
+                    compiler,
+                    pretty-simple >= 4.0 && < 4.1
+    default-language: GHC2021
+    ghc-options: -threaded -rtsopts
+
